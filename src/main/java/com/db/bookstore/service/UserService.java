@@ -17,25 +17,21 @@ public class UserService {
     }
     public User findByUsernameOrEmailAndPassword(User user) throws Exception {
        List<User> users = userRepository.findByUsernameOrEmailAndPassword(user.getUsername(), user.getEmail(), user.getPassword());
-
-       if(users.size() == 0)
-       {
+       if(users.size() == 0) {
            throw new Exception("No user found");
        }
-
-       if(users.size() == 1)
-       {
+       if(users.size() == 1) {
            return users.get(0);
        }
-
-       if(users.size() > 1)
-       {
+       if(users.size() > 1) {
            throw new Exception("Database error");
        }
-
         return null;
     }
 
+    public User findById(int id) {
+        return userRepository.findById(id);
+    }
 
 
 }

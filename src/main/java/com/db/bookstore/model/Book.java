@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -22,4 +21,14 @@ public class Book {
     private int pages;
     private String publisher;
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", authorList=" + authorList +
+                ", pages=" + pages +
+                ", publisher='" + publisher + '\'' +
+                '}';
+    }
 }
